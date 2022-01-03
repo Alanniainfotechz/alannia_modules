@@ -5,7 +5,7 @@
     'version': '14.0.1.0.0',
     'category': 'Partner',
     'license': 'AGPL-3',
-    'author': 'Alannia',
+    'author': 'Alanniainfotechz',
     'website': '',
     'summary': 'This module helps to hide the website price for Public User',
     'depends': [

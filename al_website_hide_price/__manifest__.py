@@ -1,7 +1,7 @@
 # See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Product Price show only for Portal Users',
+    'name': 'Product Price Hide only for Public Users',
     'version': '15.0.1.0.0',
     'category': 'Partner',
     'license': 'AGPL-3',

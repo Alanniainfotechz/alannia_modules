@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="view_order_form_inherit_sale_iew_attachments" model="ir.ui.view">
+                    <field name="name">sale.order.form</field>
+                    <field name="model">sale.order</field>
+                    <field name="inherit_id" ref="sale.view_order_form"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//div[@name='button_box']" position="inside">
+                            <button
+                                name="view_attachments"
+                                type="object"
+                                class="btn-link"
+                                icon="fa-paperclip"
+                                attrs="{'invisible': [('attach_count', '=', 0)]}" >
+                                <field name="attach_count" widget="statinfo" string="Attachments"/>
+                            </button>
+                        </xpath>
+                    </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="web_template_inherit" inherit_id="website_sale.cart_lines">
+            <xpath expr="//table[@class='mb16 table table-striped table-sm js_cart_lines']" position="after">
+                <div class="mb16 table table-striped table-sm js_cart_lines">
+                     <div class="form-group row form-field o_website_form_required_custom">
+                        <form action="/file/upload" method="post"  enctype="multipart/form-data" id="file_upload_form">
+                            <div t-attf-class="form-group">
+                                <div>
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="order_id" t-att-value="website_sale_order.id"/>
+                                    <input type="hidden" name="so_name" t-att-value="website_sale_order.name"/>
+                                    <input type="file" name="attachment" class="file btn btn-primary ml-4" multiple="true" accept="image/*,application/pdf,video/*" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true"/>
+                                    <button type="submit" name="Upload" title="Upload the File After Choosing"  class="fa fa-upload btn btn-primary ml-4">
+                                        UPLOAD
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                     </div>
+                    <t t-set="attachments" t-value="website_sale_order.get_view_attachents()"/>
+                    <t t-if="attachments">
+                        <span><strong>Attachment(s):</strong></span>
+                        <table class="mb16 table table-striped table-sm js_cart_lines">
+                            <thead  style=" border: 1px solid black;border-radius: 10px;">
+                                <tr style="background-color: #96D4D4;">
+                                    <th class="text-center">Sr.</th>
+                                    <th style="padding-left: 40px">File</th>
+                                    <th class="text-center ">Delete</th>
+                                </tr>
+                                <t t-set="count" t-value="1"/>
+                                <tr t-foreach="attachments" t-as="attachment" >
+                                    <td class="text-center">
+                                        <span><t t-esc="count"/></span>
+                                        <t t-set="count" t-value="count + 1"/>
+                                    </td>
+                                    <td style="padding-left: 40px">
+                                       <span t-esc="attachment.name"/>
+                                    </td>
+                                    <td class="td-action  text-center" >
+                                        <form action="/file_upload/remove" method="post" >
+                                            <div t-attf-class="form-group">
+                                                <div>
+                                                    <input type="hidden" name="attach_id" t-att-value="attachment.id"/>
+                                                    <button type="submit"  title="Remove the File" class='btn btn-secondary'>Delete    <small><i class='fa fa-trash-o'></i></small></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>

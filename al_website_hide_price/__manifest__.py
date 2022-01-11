@@ -1,7 +1,7 @@
 # See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Price hide for Public User',
+    'name': 'Odoo15 Price Hide for Public Users',
     'version': '15.0.1.0.0',
     'category': 'Partner',
     'license': 'AGPL-3',
@@ -9,7 +9,7 @@
     'website': '',
     'price': 7.18,
     'currency': 'USD',
-    'summary': 'This module helps to hide the website price for Public User',
+    'summary': 'This module helps to hide the website price for Public User on Version-15.0 ',
     'depends': [
         'website_sale',
     ],

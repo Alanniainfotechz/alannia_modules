@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Add Attachments from Website',
+    'name': 'Website Attachments Cart',
     'version': '15.0.1.0.0',
     'description': """
 """,
@@ -13,7 +13,7 @@
     ],
     'installable': True,
     'auto_install': False,
-    'summary': "Add an Attachments to Ir Attachments from website Cart Page",
+    'summary': "Odoo15 Add an Attachments to Ir Attachments from website Cart Page",
     'images': ['images/odoo_icon.png'],
     'price': 25.18,
     'currency': 'USD',

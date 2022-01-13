@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Website Attachments Cart',
+    'name': 'Odoo15 Website Attachments Cart',
     'version': '15.0.1.0.0',
     'description': """
 """,
